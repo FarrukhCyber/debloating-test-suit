@@ -1,0 +1,23 @@
+
+7-Zip (a) [64] 16.02 : Copyright (c) 1999-2016 Igor Pavlov : 2016-05-21
+p7zip Version 16.02 (locale=C,Utf16=off,HugeFiles=on,64 bits,4 CPUs x64)
+
+Scanning the drive for archives:
+1 file, 198662 bytes (195 KiB)
+
+Testing archive: ./compressed_files/7za433_7zip_bzip2.7z
+--
+Path = ./compressed_files/7za433_7zip_bzip2.7z
+Type = 7z
+Physical Size = 198662
+Headers Size = 301
+Method = LZMA:19 BZip2 BCJ2
+Solid = +
+Blocks = 2
+
+Everything is Ok
+
+Folders: 3
+Files: 3
+Size:       490885
+Compressed: 198662
