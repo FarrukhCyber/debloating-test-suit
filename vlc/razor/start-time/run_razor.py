@@ -2,7 +2,7 @@
 from __future__ import print_function
 import os, subprocess, sys
 
-DRRUN = '../../../tracers/dynamorio/bin64/drrun'
+DRRUN = '../../../../tracers/dynamorio/bin64/drrun'
 CLIENT = './logs/libcbr_indcall.so'
 
 def execute(cmd):
@@ -43,26 +43,26 @@ def get_traces_for_test(logs_dir, prog_name):
         cmd = DRRUN + ' -c ' + CLIENT + ' -- ' + cmd
         start_time += 1
         execute(cmd)
-    execute("""python ../../../stitcher/src/merge_log.py %s %s""" % (logs_dir, prog_name))
+    execute("""python ../../../../stitcher/src/merge_log.py %s %s""" % (logs_dir, prog_name))
     execute("""mkdir -p ./backup""")
     execute("""mv %s/%s-trace.log ./backup/""" % (logs_dir, prog_name))
 
 
 def debloat(logs_dir, prog_name):
-    execute("""python ../../../stitcher/src/merge_log.py %s %s""" % (logs_dir, prog_name))
+    execute("""python ../../../../stitcher/src/merge_log.py %s %s""" % (logs_dir, prog_name))
     execute("""mv %s/%s-trace.log ./""" % (logs_dir, prog_name))
-    execute("""python ../../../stitcher/src/instr_dumper.py ./%s-trace.log ./%s.orig ./instr.s""" % (prog_name, prog_name))
-    execute("""python ../../../stitcher/src/find_symbols.py ./%s.orig ./instr.s """ % (prog_name))
-    execute("""python ../../../stitcher/src/stitcher.py ./%s-trace.log ./%s.orig ./%s.s ./callbacks.txt""" % (prog_name, prog_name, prog_name))
-    execute("""python ../../../stitcher/src/merge_bin.py %s.orig %s.s""" % (prog_name, prog_name))
+    execute("""python ../../../../stitcher/src/instr_dumper.py ./%s-trace.log ./%s.orig ./instr.s""" % (prog_name, prog_name))
+    execute("""python ../../../../stitcher/src/find_symbols.py ./%s.orig ./instr.s """ % (prog_name))
+    execute("""python ../../../../stitcher/src/stitcher.py ./%s-trace.log ./%s.orig ./%s.s ./callbacks.txt""" % (prog_name, prog_name, prog_name))
+    execute("""python ../../../../stitcher/src/merge_bin.py %s.orig %s.s""" % (prog_name, prog_name))
 
 def extend_debloat(prog_name, heuristic_level):
-    execute("""python ../../../stitcher/src/heuristic/disasm.py ./%s.orig ./%s.orig.asm """ % (prog_name, prog_name))
-    execute("""python ../../../stitcher/src/heuristic/find_more_paths.py ./%s.orig.asm ./%s-trace.log ./%s-extended.log %d""" % (prog_name, prog_name, prog_name, heuristic_level))
-    execute("""python ../../../stitcher/src/instr_dumper.py ./%s-extended.log ./%s.orig ./instr.s""" % (prog_name, prog_name))
-    execute("""python ../../../stitcher/src/find_symbols.py ./%s.orig ./instr.s""" % (prog_name))
-    execute("""python ../../../stitcher/src/stitcher.py ./%s-extended.log ./%s.orig ./%s.s ./callbacks.txt""" % (prog_name, prog_name, prog_name))
-    execute("""python ../../../stitcher/src/merge_bin.py %s.orig %s.s""" % (prog_name, prog_name))
+    execute("""python ../../../../stitcher/src/heuristic/disasm.py ./%s.orig ./%s.orig.asm """ % (prog_name, prog_name))
+    execute("""python ../../../../stitcher/src/heuristic/find_more_paths.py ./%s.orig.asm ./%s-trace.log ./%s-extended.log %d""" % (prog_name, prog_name, prog_name, heuristic_level))
+    execute("""python ../../../../stitcher/src/instr_dumper.py ./%s-extended.log ./%s.orig ./instr.s""" % (prog_name, prog_name))
+    execute("""python ../../../../stitcher/src/find_symbols.py ./%s.orig ./instr.s""" % (prog_name))
+    execute("""python ../../../../stitcher/src/stitcher.py ./%s-extended.log ./%s.orig ./%s.s ./callbacks.txt""" % (prog_name, prog_name, prog_name))
+    execute("""python ../../../../stitcher/src/merge_bin.py %s.orig %s.s""" % (prog_name, prog_name))
 
 def clean():
     for fname in os.listdir('./'):
@@ -72,7 +72,7 @@ def clean():
         if fname == 'test' or fname == 'train' or fname == "backup":
             continue
 
-        if fname == "vlc.orig"
+        if fname == "vlc.orig":
             continue
 
         execute('rm -rf ./' + fname)
@@ -89,7 +89,7 @@ def main():
         cmd = "mkdir -p ./logs"
         execute(cmd)
 
-        cmd = "cp ../../../tracers/bin/libcbr_indcall.so ./logs/"
+        cmd = "cp ../../../../tracers/bin/libcbr_indcall.so ./logs/"
         execute(cmd)
     
     if sys.argv[1] == 'train':
