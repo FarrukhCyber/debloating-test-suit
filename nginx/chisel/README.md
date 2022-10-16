@@ -16,3 +16,5 @@ to this:
 clean:
   rm -rf ./objs/*.o ./objs/*.so ./objs/nginx ./objs/nginx.8
 ```
+
+Also, place the **wrong_nginx.conf** file in the **conf** folder of source code. This file is used in the train script of -t flag.
