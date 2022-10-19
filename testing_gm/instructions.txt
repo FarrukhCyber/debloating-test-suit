@@ -1,0 +1,5 @@
+In testing.py, change the bin_files on line 16 list to your debloated binary names. Also add all your debloated binaries in this folder.
+Run the python file using the command python3 testing.py
+while the file is running, don't change the screen as the script is not saving the images, rather taking the screenshot of your screen and then comparing.
+Also dont delete any file from this directory.
+If it is failing on some case, try to increase the sleep_time to 2 secs in testing.py line no. 12
