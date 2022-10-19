@@ -1,0 +1,2 @@
+nginx: [emerg] unexpected end of file, expecting ";" or "}" in /etc/nginx/nginx.conf:119
+nginx: configuration file /etc/nginx/nginx.conf test failed
