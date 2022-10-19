@@ -1,0 +1,1 @@
+nginx: [error] open() "/var/run/nginx.pid" failed (2: No such file or directory)

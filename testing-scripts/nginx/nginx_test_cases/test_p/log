@@ -1,0 +1,2 @@
+root      106489  0.0  0.0   8276   808 ?        Ss   12:42   0:00 nginx: master process ./nginx -p ./temp
+root      106492  0.0  0.0   3084   888 pts/4    S+   12:42   0:00 grep ./nginx

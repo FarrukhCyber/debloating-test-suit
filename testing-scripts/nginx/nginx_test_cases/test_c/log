@@ -1,0 +1,2 @@
+nginx: [emerg] unknown directive "text/calendar" in /nginx_test_cases/test_c/wrong_conf/wrong_nginx.conf:18
+nginx: configuration file /nginx_test_cases/test_c/wrong_conf/wrong_nginx.conf test failed
