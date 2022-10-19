@@ -1,6 +1,9 @@
 #! /bin/bash
 
-CMD=./putty
+CMD_M=./<binFileName>
+CMD_LOAD=./<binFileName>
+CMD_SSH=./<binFileName>
+CMD_TELNET=./<binFileName>
 IP=<your ip address>
 USER=<your username>
 PSWD=<your password>
@@ -20,7 +23,7 @@ function test_ssh() {
     echo "===================="
 
     #Case-1: everything's good
-    timeout $limit $CMD -log session.txt -ssh $IP -l $USER -pw $PSWD >& /dev/null
+    timeout $limit $CMD_SSH -log session.txt -ssh $IP -l $USER -pw $PSWD >& /dev/null
 
     if grep -q "Welcome to Ubuntu" session.txt
     then
@@ -35,7 +38,7 @@ function test_ssh() {
     rm -f session.txt
     touch session.txt
 
-    timeout $limit $CMD -log session.txt -ssh $IP -l $USER -pw qwrt >& /dev/null
+    timeout $limit $CMD_SSH -log session.txt -ssh $IP -l $USER -pw qwrt >& /dev/null
 
     if grep -q "Access denied" session.txt
     then
@@ -50,7 +53,7 @@ function test_ssh() {
     rm -f session.txt
     touch session.txt
 
-    timeout $limit $CMD -log session.txt -ssh $IP -l hackerman -pw $PSWD >& /dev/null
+    timeout $limit $CMD_SSH -log session.txt -ssh $IP -l hackerman -pw $PSWD >& /dev/null
 
     if grep -q "Access denied" session.txt
     then
@@ -65,7 +68,7 @@ function test_ssh() {
     rm -f session.txt
     touch session.txt
 
-    timeout $limit $CMD -log session.txt -ssh 111.11.0.1 -l $USER -pw $PSWD >& /dev/null
+    timeout $limit $CMD_SSH -log session.txt -ssh 111.11.0.1 -l $USER -pw $PSWD >& /dev/null
     status=$?
 
     if ! grep -q "Welcome to Ubuntu" session.txt
@@ -111,7 +114,7 @@ function test_m() {
     echo ls > remote_command
     #======================
 
-    $CMD -log session.txt -ssh $IP -l $USER -pw $PSWD -m remote_command >& /dev/null
+    $CMD_M -log session.txt -ssh $IP -l $USER -pw $PSWD -m remote_command >& /dev/null
 
     if grep -q "Desktop" session.txt
     then
@@ -131,7 +134,7 @@ function test_m() {
     echo "echo testing" > remote_command
     #======================
 
-    $CMD -log session.txt -ssh $IP -l $USER -pw $PSWD -m remote_command >& /dev/null
+    $CMD_M -log session.txt -ssh $IP -l $USER -pw $PSWD -m remote_command >& /dev/null
 
     if grep -q "testing" session.txt
     then
@@ -151,7 +154,7 @@ function test_m() {
     echo chalo > remote_command
     #======================
 
-    $CMD -log session.txt -ssh $IP -l $USER -pw $PSWD -m remote_command >& /dev/null
+    $CMD_M -log session.txt -ssh $IP -l $USER -pw $PSWD -m remote_command >& /dev/null
 
     if grep -q "command not found" session.txt
     then
@@ -191,7 +194,7 @@ function test_load() {
     echo "===================="
 
     #Case-1: everything's good
-   timeout $limit $CMD -load $SAVED_FILE -log session.txt -l $USER -pw $PSWD >& /dev/null
+   timeout $limit $CMD_LOAD -load $SAVED_FILE -log session.txt -l $USER -pw $PSWD >& /dev/null
 
     if grep -q "Welcome to Ubuntu" session.txt
     then
@@ -207,7 +210,7 @@ function test_load() {
     touch session.txt
     touch log
 
-   timeout $limit $CMD -load file -l $USER -pw $PSWD >& log 
+   timeout $limit $CMD_LOAD -load file -l $USER -pw $PSWD >& log 
 
     if grep -q "failed in GtkScrollbar" log
     then
@@ -245,7 +248,7 @@ function test_telnet() {
     echo " Testing -telnet Flag "
     echo "===================="
 
-    timeout $limit $CMD -log -telnet $IP >& /dev/null
+    timeout $limit $CMD_TELNET -log -telnet $IP >& /dev/null
     if [ $? -eq 124 ]
     then
         let pass=pass+1
