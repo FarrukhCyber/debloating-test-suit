@@ -4,5 +4,6 @@
 - Place your binaries in the folder
 - Run the following command:
 ```
-echo
+chmod u+x putty-test-cases.sh
+./putty-test-cases.sh
 ```
