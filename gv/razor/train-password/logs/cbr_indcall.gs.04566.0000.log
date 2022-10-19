@@ -1,0 +1,76 @@
+MODULE_NAME: /usr/bin/gs
+MODULE_START: 0x7f0bbc7b5000
++B+: 0x7f0bbc7b6000 0x7f0bbc7b600f
++B+: 0x7f0bbc7b6012 0x7f0bbc7b6016
++B+: 0x7f0bbc7b6020 0x7f0bbc7b602b
++B+: 0x7f0bbc7b6030 0x7f0bbc7b6035
++B+: 0x7f0bbc7b6036 0x7f0bbc7b603f
++B+: 0x7f0bbc7b6040 0x7f0bbc7b6045
++B+: 0x7f0bbc7b6046 0x7f0bbc7b604f
++B+: 0x7f0bbc7b6050 0x7f0bbc7b6055
++B+: 0x7f0bbc7b6056 0x7f0bbc7b605f
++B+: 0x7f0bbc7b60b0 0x7f0bbc7b60b5
++B+: 0x7f0bbc7b60b6 0x7f0bbc7b60bf
++B+: 0x7f0bbc7b60c0 0x7f0bbc7b60c5
++B+: 0x7f0bbc7b60c6 0x7f0bbc7b60cf
++B+: 0x7f0bbc7b60e0 0x7f0bbc7b60e5
++B+: 0x7f0bbc7b60f0 0x7f0bbc7b6121
++B+: 0x7f0bbc7b6122 0x7f0bbc7b6127
++B+: 0x7f0bbc7b6128 0x7f0bbc7b6130
++B+: 0x7f0bbc7b6131 0x7f0bbc7b6132
++B+: 0x7f0bbc7b6133 0x7f0bbc7b6137
++B+: 0x7f0bbc7b613d 0x7f0bbc7b6152
++B+: 0x7f0bbc7b6153 0x7f0bbc7b615b
++B+: 0x7f0bbc7b6178 0x7f0bbc7b6183
++B+: 0x7f0bbc7b6184 0x7f0bbc7b61a2
++B+: 0x7f0bbc7b61a3 0x7f0bbc7b61b1
++B+: 0x7f0bbc7b61b2 0x7f0bbc7b61b7
++B+: 0x7f0bbc7b61b8 0x7f0bbc7b61c1
++B+: 0x7f0bbc7b61c2 0x7f0bbc7b61c5
++B+: 0x7f0bbc7b61c6 0x7f0bbc7b61ca
++B+: 0x7f0bbc7b61cb 0x7f0bbc7b61d6
++B+: 0x7f0bbc7b61d7 0x7f0bbc7b61db
++B+: 0x7f0bbc7b61dc 0x7f0bbc7b61e0
++B+: 0x7f0bbc7b6213 0x7f0bbc7b6216
++B+: 0x7f0bbc7b6220 0x7f0bbc7b6249
++B+: 0x7f0bbc7b6250 0x7f0bbc7b6262
++B+: 0x7f0bbc7b6278 0x7f0bbc7b6278
++B+: 0x7f0bbc7b6280 0x7f0bbc7b62a3
++B+: 0x7f0bbc7b62b8 0x7f0bbc7b62b8
++B+: 0x7f0bbc7b62c0 0x7f0bbc7b62c8
++B+: 0x7f0bbc7b62c9 0x7f0bbc7b62d6
++B+: 0x7f0bbc7b62d7 0x7f0bbc7b62e2
++B+: 0x7f0bbc7b62e3 0x7f0bbc7b62e7
++B+: 0x7f0bbc7b62e8 0x7f0bbc7b62f0
++B+: 0x7f0bbc7b6300 0x7f0bbc7b6304
++B+: 0x7f0bbc7b63c0 0x7f0bbc7b63ec
++B+: 0x7f0bbc7b63ed 0x7f0bbc7b63f2
++B+: 0x7f0bbc7b63f3 0x7f0bbc7b6404
++B+: 0x7f0bbc7b6405 0x7f0bbc7b640d
++B+: 0x7f0bbc7b640e 0x7f0bbc7b641c
++B+: 0x7f0bbc7b6424 0x7f0bbc7b642c
++CND+ 0x7f0bbc7b600e: taken
++CND+ 0x7f0bbc7b6126: taken
++CND+ 0x7f0bbc7b612b: not taken
++CND+ 0x7f0bbc7b6131: not taken
++CND+ 0x7f0bbc7b6136: taken
++CND+ 0x7f0bbc7b614d: not taken
++CND+ 0x7f0bbc7b61b6: not taken
++CND+ 0x7f0bbc7b61c4: not taken
++CND+ 0x7f0bbc7b61c9: taken
++CND+ 0x7f0bbc7b61df: taken
++CND+ 0x7f0bbc7b6261: taken
++CND+ 0x7f0bbc7b62a2: taken
++CND+ 0x7f0bbc7b62c7: not taken
++CND+ 0x7f0bbc7b62d5: not taken
++CND+ 0x7f0bbc7b63f1: not taken
++CND+ 0x7f0bbc7b640c: not taken
+@0x7f0bbc7b6026 to 0x7f0bc07a5500 5
+@0x7f0bbc7b6030 to 0x7f0bbc7b6036 1
+@0x7f0bbc7b6040 to 0x7f0bbc7b6046 1
+@0x7f0bbc7b6050 to 0x7f0bbc7b6056 1
+@0x7f0bbc7b60b0 to 0x7f0bbc7b60b6 1
+@0x7f0bbc7b60c0 to 0x7f0bbc7b60c6 1
+@0x7f0bbc7b60e0 to 0x7f0bbf30b1c0 1
+@0x7f0bbc7b6244 to 0x7f0bbf2f4fb0 1
+@0x7f0bbc7b6401 to 0x7f0bbc7b6300 1
